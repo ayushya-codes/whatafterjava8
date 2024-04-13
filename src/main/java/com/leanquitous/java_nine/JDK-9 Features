@@ -1,0 +1,15 @@
+Source - https://www.oracle.com/java/technologies/javase/9-relnotes.html#NewFeature
+
+1. Serialization filtering - https://openjdk.org/jeps/290
+2. Compact Strings - A new jvm option -XX:-CompactStrings has been introduced in JDK 9 to disable this feature.
+but this feature (Compact strings which are enabled by default) shouldn't be used in case if your application is
+going to have multiple bytes per character strings! AND/OR if you see significant performance drop while moving from
+JDK 8 to JDK 9 and analysis concludes it is due to this compact strings! (Remember compressed strings is a different
+feature and it was introduced in JDK 6 and was supporting a single character set)
+3. Change default GC to G1 - G1 is better than parallel GC,
+4. Module System
+5. HTTP2 client is introduced.
+6. Indify String Concatenation - invokedynamic (instruction in JVM, introduced in JDK 7 and used in Lambda in JDK 8
+based string concatination which reduces the number of bytecode instructions)
+7. Stack walking API - https://www.baeldung.com/java-9-stackwalking-api
+8.

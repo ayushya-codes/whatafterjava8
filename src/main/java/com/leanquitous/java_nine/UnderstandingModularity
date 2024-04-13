@@ -1,0 +1,52 @@
+### SOURCE:--- https://www.oracle.com/in/corporate/features/understanding-java-9-modules.html
+
+## Understanding Modules!
+* Modularity adds a higher level of aggregation above packages. The key new language element is module, which can be
+used to group together related packages under a module.
+* Module is a uniquely named, reusable group of packages as well as resources such as xml, images etc and a module
+descriptor specifying
+    - the module's name
+    - the module's dependencies (other modules that this module depends on)
+    - the packages it (the module) makes it available for other modules to use (implicitly all other packages in the
+    module are unavailable for other modules)
+    - the services it offers.
+    - the services it consumes.
+    - to what other modules it allows reflections.
+
+## History!
+Java was one size fits all kind of solution if we consider the range of devices it can program that ranges from
+a monolith application to IoT Devices! & this requires some serious modularization.
+
+Modularization has some goals
+* Reliable configuration
+* Strong Encapsulation
+* Scalable java platform
+* Greater Platform Integrity
+* Improved Performance
+
+#### Listing all available modules in JDK
+just type following command
+
+`java --list-modules` and this should show all the available modules.
+
+#### Module Declaration
+A module is declared/defined with `module-info.java` file using below syntax of code.
+
+```
+module MODULE_NAME {
+    // Body
+}
+```
+
+The body for module declaration body can be empty as shown above or it can contain some important module directive
+such as
+- requires
+- exports
+- provides...with
+- uses
+- opens
+- to
+- transitive
+
+Compiling the module declaration creates the module descriptor file `module-info.class`
+
